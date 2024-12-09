@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
-import { SiteHeaderComponent } from '_course-resources/site-header/site-header.component';
+import { SiteHeaderComponent } from './site-header/site-header.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -13,10 +18,16 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     HomeComponent,
     CatalogueComponent,
     SiteHeaderComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent,
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
